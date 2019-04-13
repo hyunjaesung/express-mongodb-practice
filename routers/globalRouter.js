@@ -1,7 +1,11 @@
 import express from "express";
+import routes from "../routers";
 
-export const userRouter = express.Router();
 
-userRouter.get("/", (req,res) => res.send("user index"));
-userRouter.get("/edit", (req,res) => res.send("user edit"));
-userRouter.get("/password", (req,res) => res.send("user password"));
+export const globalRouter = express.Router();
+
+globalRouter.get(routes.home, (req, res) => res.send("Home"));
+globalRouter.get(routes.join, (req,res) => res.send("join"));
+globalRouter.get(routes.login, (req,res) => res.send("login"));
+globalRouter.get(routes.logout, (req,res) => res.send("logout"));
+globalRouter.get(routes.search, (req,res) => res.send("search"));
